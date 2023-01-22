@@ -13,8 +13,20 @@
     <div class="container">
         <nav>
       <%= link_to 'Home', root_path %>
-      <%= link_to 'Premium Info', premium_path %>
+      |
       <%= link_to 'All Artists', artists_path %>
+      <%= link_to 'New Artist', new_artist_path %>
+      |
+      <%= link_to 'All Albums', albums_path %>
+      <%= link_to 'New Album', new_album_path %>
+      |
+      <%= link_to 'All Genres', genres_path %>
+      |
+      <%= link_to 'All Songs', songs_path %>
+      <%= link_to 'New Song', new_song_path %>
+      |
+      <%= link_to 'Premium', premium_path %>
+      |
       <% if @current_user.present? %>
         <% if @current_user.admin? %>
           <%= link_to "All users", users_path %>

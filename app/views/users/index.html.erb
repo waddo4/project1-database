@@ -2,6 +2,9 @@
 <h1>All users</h1>
 
 <% @users.each do |user|%>
-    <p><%= user.email %></p>
+    <p> Email: <%= user.email %></p>
+    <p>Admin: <%= user.admin %></p>
+    <p>Premium: <%= user.premium %></p>
+    <br>
 <% end %>
 </div>

@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   root :to => 'pages#home' 
   resources :users, :only => [:new, :create, :index]
   resources :artists
-  resources :genres, :only => [:new, :edit]
+  resources :genres #, :only => [:new, :edit]
   resources :albums
-  resources :songs, :except => [:index]
+  resources :songs
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'

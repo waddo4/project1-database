@@ -1,10 +1,14 @@
 <%= form_for @song do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title %>
-
-
     <%= f.label :artist_id %>
     <%= f.select :artist_id, Artist.pluck(:name, :id), :include_blank => true %>
+    <%= f.label :album_id %>
+    <%= f.select :album_id, Album.pluck(:title, :id), :include_blank => true %>
+    <%= f.label :length %>
+    <%= f.text_field :length %>
+    <%= f.label :video %>
+    <%= f.text_field :video %>
 
     <%= f.submit %>
 <% end %>

@@ -3,8 +3,12 @@
 <%= image_tag @artist.image, :class => 'thumb' if @artist.image.present? %>
     <ul>
         <li>Country: <%= @artist.country %></li>
-        <li>Formed: <%= @artist.start %></li>
-        <li>End date: <%= @artist.end %></li>
+        <li>Years active: <%= @artist.start.strftime '%Y' %> - <%= @artist.end.strftime '%Y' %></li>
         <li>Members: <%= @artist.members %></li>
         <li>Information: <%= link_to @artist.info %></li>
     </ul>
+
+<div class="controls">
+    <%= link_to 'Edit Artist', edit_artist_path(@artist) %>
+    <%= link_to 'Delete Artist', @artist, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+</div>

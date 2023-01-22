@@ -1,4 +1,17 @@
 <%= form_for @album do |f| %>
 
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :artist_id %>
+    <%= f.select :artist_id, Artist.pluck(:name, :id), :include_blank => true %>
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+    <%= f.label :length %>
+    <%= f.text_field :length %>
+    <%= f.label :image %>
+    <%= f.text_field :image %>
+    <%= f.label :tracks %>
+    <%= f.text_field :tracks %>
+
     <%= f.submit %>
 <% end %>
