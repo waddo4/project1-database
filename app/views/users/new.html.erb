@@ -1,6 +1,5 @@
 <h1>Sign up</h1>
 
-
 <% if @user.errors.any? %>
     <ol>
         <% @user.errors.full_messages.each do |msg| %>
@@ -21,5 +20,5 @@
     <%= f.password_field :password_confirmation %>
 
     <%= f.submit 'Sign Up!' %>
-
+    
 <% end %>

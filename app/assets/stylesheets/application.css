@@ -39,7 +39,8 @@ h1 {
     color: rgb(215, 137, 58);
     font-size: 52px;
     text-align: center;
-    margin-top: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 h2 {
     text-align: center;
@@ -49,29 +50,28 @@ label{
     font-size: 16px;
 }
 
+.thumb {
+    height: 10em;
+}
+
 .feature {
-    max-width: 90%;
-}
-
-.img {
-    height: 500px;
-    width: 333px;
-}
-
-.mask {
-    max-width: 70%;
-    max-height: 70%;
+    max-height: 30em;
 }
 
 form {
-    padding-left: 60px;
+    padding: 0 auto;
 }
 
 nav {
-    padding-top: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .controls {
     font-weight: bold;
     font-size: 20px;
+}
+
+footer {
+    padding-top: 10px;
 }

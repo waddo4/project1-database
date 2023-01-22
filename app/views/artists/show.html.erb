@@ -1,0 +1,10 @@
+<h1><%= @artist.name %></h1>
+
+<%= image_tag @artist.image, :class => 'thumb' if @artist.image.present? %>
+    <ul>
+        <li>Country: <%= @artist.country %></li>
+        <li>Formed: <%= @artist.start %></li>
+        <li>End date: <%= @artist.end %></li>
+        <li>Members: <%= @artist.members %></li>
+        <li>Information: <%= link_to @artist.info %></li>
+    </ul>

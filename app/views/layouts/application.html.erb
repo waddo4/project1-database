@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BigYoshi Records</title>
+    <title>Geezer</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="icon" href="/assets/big_yoshi_fav.png">
@@ -13,6 +13,8 @@
     <div class="container">
         <nav>
       <%= link_to 'Home', root_path %>
+      <%= link_to 'Premium Info', premium_path %>
+      <%= link_to 'All Artists', artists_path %>
       <% if @current_user.present? %>
         <% if @current_user.admin? %>
           <%= link_to "All users", users_path %>
