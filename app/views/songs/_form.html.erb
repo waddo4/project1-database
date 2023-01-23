@@ -9,6 +9,16 @@
     <%= f.text_field :length %>
     <%= f.label :video %>
     <%= f.text_field :video %>
+    <div class="checkbox">
+        <%= check_box_tag(:genre) %>
+        <%= label_tag(:genre, "Genre 1") %>
+        <%= check_box_tag(:genre) %>
+        <%= label_tag(:genre, "Genre 2") %>
+        <%= check_box_tag(:genre) %>
+        <%= label_tag(:genre, "Genre 3") %>
+        <%= check_box_tag(:genre) %>
+        <%= label_tag(:genre, "Genre 4") %>
+    </div>
 
     <%= f.submit %>
 <% end %>

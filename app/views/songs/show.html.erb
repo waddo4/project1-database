@@ -2,13 +2,12 @@
 
     <ul>
         <li>Title: <%= @song.title %></li>
-        <li>Artist: <%= @song.artist_id %></li>
-        <li>Album: <%= @song.album_id %></li>
+        <li>Artist: <%= link_to @song.artist.name, @song.artist %></li>
+        <li>Album: <%= link_to @song.album.title, @song.album %></li>
         <li>Length: <%= @song.length %></li>
         <li><%= video_path( @song.video ) %></li>
     </ul>
-    <iframe width="560" height="315" src=<%= @song.video %> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+    
 <div class="controls">
     <%= link_to 'Edit song', edit_song_path(@song) %>
     <%= link_to 'Delete song', @song, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>

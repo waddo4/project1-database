@@ -4,8 +4,8 @@
 
 <ul>
     <li>Title: <%= @album.title %></li>
-    <% if @album.artist.present? %>
-    <li>Artist: <%= link_to @album.artist.name, @album.artist %></li>
+    <% if @album.artists.any? %>
+    <li>Artist: <%= link_to @album.artists.first.name, @album.artists.first %></li>
     <% end %>
     <% if @album.date.present? %>
     <li>Release date: <%= @album.date.strftime '%e %B, %Y' %></li>

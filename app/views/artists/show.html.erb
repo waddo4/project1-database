@@ -17,10 +17,12 @@
     </ul>
 
     <h2>Albums</h2>
+    <div class="gallery">
     <% @artist.albums.each do |album| %>
         <%= link_to image_tag(album.image, :class =>'thumb'), album %>
     <% end %>
-
+    </div>
+    - - - - - - - - - - - - - - -
 <div class="controls">
     <%= link_to 'Edit Artist', edit_artist_path(@artist) %>
     <%= link_to 'Delete Artist', @artist, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
