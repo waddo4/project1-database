@@ -3,5 +3,8 @@
 <div class="gallery">
 <% @albums.each do |album|%>
     <%= link_to image_tag(album.image, :class =>'thumb'), album %>
+    <% if album.image.empty? %>
+        <%= link_to album.title, album %>
+    <% end %>
 <% end %>
 </div>

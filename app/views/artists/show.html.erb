@@ -1,12 +1,25 @@
 <h1><%= @artist.name %></h1>
 
 <%= image_tag @artist.image, :class => 'thumb' if @artist.image.present? %>
+
     <ul>
         <li>Country: <%= @artist.country %></li>
-        <li>Years active: <%= @artist.start.strftime '%Y' %> - <%= @artist.end.strftime '%Y' %></li>
+            <% if @artist.start.present? && @artist.end.present? %>
+        <li>Years active: <%= @artist.start.strftime '%Y' %> - 
+        <% if @artist.end < Time.now %>
+            <%= @artist.end.strftime '%Y' %></li>
+        <% elsif @artist.end > Time.now %>
+            Present
+            <% end %>
+            <% end %>
         <li>Members: <%= @artist.members %></li>
         <li>Information: <%= link_to @artist.info %></li>
     </ul>
+
+    <h2>Albums</h2>
+    <% @artist.albums.each do |album| %>
+        <%= link_to image_tag(album.image, :class =>'thumb'), album %>
+    <% end %>
 
 <div class="controls">
     <%= link_to 'Edit Artist', edit_artist_path(@artist) %>

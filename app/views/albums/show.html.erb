@@ -7,6 +7,13 @@
     <% if @album.artist.present? %>
     <li>Artist: <%= link_to @album.artist.name, @album.artist %></li>
     <% end %>
+    <% if @album.date.present? %>
+    <li>Release date: <%= @album.date.strftime '%e %B, %Y' %></li>
+    <% end %>
+    <% if @album.length.present?%>
+    <li>Length: <%= @album.length.strftime '%H:%M:%S' %></li>
+    <% end %>
+    <li>Tracks: <%= @album.tracks %></li>
 </ul>
 
 <div class="controls">
