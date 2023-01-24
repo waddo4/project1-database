@@ -1,2 +1,6 @@
 <h1>Favourite Songs</h1>
-<p>Your favourite songs</p>
+
+
+<% @favourite_songs.each do |favourite_song|%>
+   <%= favourite_song.name %>
+    <% end %>

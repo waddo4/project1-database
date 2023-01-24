@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
   root :to => 'pages#home' 
   resources :users, :only => [:new, :create, :index]
-  resources :favourite_artists, :only => [:index]
-  resources :favourite_albums, :only => [:index]
-  resources :favourite_songs, :only => [:index]
+  resources :favourite_artists
+  resources :favourite_albums
+  resources :favourite_songs
   resources :artists
   resources :genres
   resources :albums
@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
   get '/premium' => 'pages#premium'
+  get '/favourites' => 'pages#favourites'
 
 end

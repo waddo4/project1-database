@@ -1,0 +1,16 @@
+<h1><%= @current_user.email %>'s Favourites</h1>
+
+<h2>Favourite Artists</h2>
+    <% @favourite_artitsts.each do |fa|%>
+    <%= fa.name %>
+<% end %>
+
+<h2>Favourite Albums</h2>
+    <% @favourite_albums.each do |fl|%>
+    <%= fl.name %>
+<% end %>
+
+<h2>Favourite Songs</h2>
+    <% @favourite_songs.each do |fs|%>
+    <%= fs.name %>
+<% end %>

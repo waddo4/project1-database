@@ -23,4 +23,8 @@
 <div class="controls">
     <%= link_to 'Edit album', edit_album_path(@album) %>
     <%= link_to 'Delete album', @album, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+    <% if @current_user.present? %>
+    <%= link_to "Favourite",   favourite_albums_path(@album, type: "favourite"), method: :put %>
+    <%= link_to "Unfavourite", favourite_albums_path(@album, type: "unfavourite"), method: :put %>
+<% end %>
 </div>

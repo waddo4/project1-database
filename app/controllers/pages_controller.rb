@@ -4,4 +4,7 @@ class PagesController < ApplicationController
 
   def premium
   end
+
+  def favourites
+  end
 end
