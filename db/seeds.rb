@@ -16,14 +16,14 @@ Artist.create :name => 'Violent Soho', :start => '2004-01-01', :end => '2022-10-
 puts "#{ Artist.count } artists"
 
 Album.destroy_all
-Album.create :title => 'Songs for the Deaf', :artist_id => 57, :date => '2002-08-27', :length => '1:00:53', :image => 'https://upload.wikimedia.org/wikipedia/en/thumb/0/01/Queens_of_the_Stone_Age_-_Songs_for_the_Deaf.png/220px-Queens_of_the_Stone_Age_-_Songs_for_the_Deaf.png', :tracks => 14
-Album.create :title => 'OK Computer', :artist_id => 58, :date => '1997-05-21', :length => '53:21', :image => 'https://upload.wikimedia.org/wikipedia/en/b/ba/Radioheadokcomputer.png', :tracks => 12 
-Album.create :title => 'Suture [EP]', :artist_id => 59, :date => '2022-08-19', :length => '14:51', :image => 'https://f4.bcbits.com/img/a0955066811_65', :tracks => 4 
-Album.create :title => "Mother's Milk", :artist_id => 60, :date => '1989-08-16', :length => '45:52', :image => 'https://upload.wikimedia.org/wikipedia/en/9/98/Mother%27Albumcover.jpg', :tracks => 13 
-Album.create :title => 'Enter the Wu-Tang (36 Chambers)', :artist_id => 61, :date => '1993-11-9', :length => '58:26', :image => 'https://cdn.shopify.com/s/files/1/0024/9803/5810/products/649478-Product-0-I.jpg?v=1572320753', :tracks => 13 
-Album.create :title => 'Drukqs', :artist_id => 62, :date => '2001-10-22', :length => '1:40:37', :image => 'https://upload.wikimedia.org/wikipedia/en/f/f0/Drukqs_%28Front_Cover%29.png', :tracks => 30 
-Album.create :title => 'Tales', :artist_id => 63, :date => '2014-10-02', :length => '38:13', :image => 'https://supercorrupter.files.wordpress.com/2016/07/peeptempels1.jpg?w=640', :tracks => 11 
-Album.create :title => 'Waco', :artist_id => 64, :date => '2016-03-18', :length => '44:48', :image => 'https://i.scdn.co/image/ab67616d0000b273b64131f711e2574519edde12', :tracks => 11
+Album.create :title => 'Songs for the Deaf', :date => '2002-08-27', :length => '1:00:53', :image => 'https://upload.wikimedia.org/wikipedia/en/thumb/0/01/Queens_of_the_Stone_Age_-_Songs_for_the_Deaf.png/220px-Queens_of_the_Stone_Age_-_Songs_for_the_Deaf.png', :tracks => 14
+Album.create :title => 'OK Computer', :date => '1997-05-21', :length => '53:21', :image => 'https://upload.wikimedia.org/wikipedia/en/b/ba/Radioheadokcomputer.png', :tracks => 12 
+Album.create :title => 'Suture [EP]', :date => '2022-08-19', :length => '14:51', :image => 'https://f4.bcbits.com/img/a0955066811_65', :tracks => 4 
+Album.create :title => "Mother's Milk", :date => '1989-08-16', :length => '45:52', :image => 'https://upload.wikimedia.org/wikipedia/en/9/98/Mother%27Albumcover.jpg', :tracks => 13 
+Album.create :title => 'Enter the Wu-Tang (36 Chambers)', :date => '1993-11-9', :length => '58:26', :image => 'https://cdn.shopify.com/s/files/1/0024/9803/5810/products/649478-Product-0-I.jpg?v=1572320753', :tracks => 13 
+Album.create :title => 'Drukqs', :date => '2001-10-22', :length => '1:40:37', :image => 'https://upload.wikimedia.org/wikipedia/en/f/f0/Drukqs_%28Front_Cover%29.png', :tracks => 30 
+Album.create :title => 'Tales', :date => '2014-10-02', :length => '38:13', :image => 'https://supercorrupter.files.wordpress.com/2016/07/peeptempels1.jpg?w=640', :tracks => 11 
+Album.create :title => 'Waco', :date => '2016-03-18', :length => '44:48', :image => 'https://i.scdn.co/image/ab67616d0000b273b64131f711e2574519edde12', :tracks => 11
 puts "#{ Album.count } albums"
 
 Song.destroy_all

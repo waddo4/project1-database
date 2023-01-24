@@ -1,9 +1,8 @@
 class FavouriteSongsController < ApplicationController
 
-  before_filter :find_user
-
   def index
     @favourite_songs = FavouriteSong.all
+    # @favourite_songs = @user.favourite_songs
   end
 
 def show
