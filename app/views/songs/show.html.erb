@@ -3,9 +3,11 @@
     <ul>
         <li>Title: <%= @song.title %></li>
         <li>Artist: <%= link_to @song.artist.name, @song.artist %></li>
-        <li>Album: <%= link_to @song.album.title, @song.album %></li>
+        <% if @song.album.present?%>
+            <li>Album: <%= link_to @song.album.title, @song.album %></li>
+        <% end %>
         <% if @song.length.present?%>
-            <li>Length: <%= @song.length.strftime '%H:%M' %></li>
+            <li>Length: <%= @song.length.strftime '%H:%M:%S' %></li>
         <% end %>
         <% if @song.video.present?%>
         <li><%= video_path( @song.video ) %></li>
