@@ -14,6 +14,10 @@
     <li>Length: <%= @album.length.strftime '%H:%M:%S' %></li>
     <% end %>
     <li>Tracks: <%= @album.tracks %></li>
+    <li>Genres: 
+        <% @album.genres.each do |genre| %>
+        | <%= genre.name %> | 
+    <% end %>
 </ul>
 
 <div class="controls">

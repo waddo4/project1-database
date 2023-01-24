@@ -4,8 +4,17 @@
         <li>Title: <%= @song.title %></li>
         <li>Artist: <%= link_to @song.artist.name, @song.artist %></li>
         <li>Album: <%= link_to @song.album.title, @song.album %></li>
-        <li>Length: <%= @song.length %></li>
+        <% if @song.length.present?%>
+            <li>Length: <%= @song.length.strftime '%H:%M' %></li>
+        <% end %>
+        <% if @song.video.present?%>
         <li><%= video_path( @song.video ) %></li>
+        <% end %>
+        <li>Genres: 
+        <% @song.genres.each do |genre| %>
+            | <%= genre.name %> | 
+        <% end %>
+        </li>
     </ul>
     
 <div class="controls">

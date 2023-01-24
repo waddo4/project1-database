@@ -2,8 +2,6 @@
 
 <% @artists.each do |artist| %>
     <%= image_tag artist.image, :class => 'thumb' if artist.image.present? %>
-    <ul style="list-style: none;">
-    <li><%= link_to artist.name, artist %></li>
-    </ul>
+   <p><%= link_to artist.name, artist %></p>
 
 <% end %>

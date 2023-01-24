@@ -14,6 +14,10 @@
             <% end %>
         <li>Members: <%= @artist.members %></li>
         <li>Information: <%= link_to @artist.info %></li>
+        <li>Genres: 
+            <% @artist.genres.each do |genre| %>
+            | <%= genre.name %> | 
+        <% end %>
     </ul>
 
     <h2>Albums</h2>
