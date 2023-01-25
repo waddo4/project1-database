@@ -1,6 +1,10 @@
 class SongsController < ApplicationController
     def index
-        @songs = Song.all
+        if params[:search].present?
+            @songs = Song.where'title ILIKE ?', '%' + params[:search] + '%'
+        else
+            @songs = Song.all
+        end
     end
 
     def new
@@ -32,20 +36,17 @@ class SongsController < ApplicationController
         redirect_to songs_path
     end
 
-    def favourite
-        type = params[:type]
-        if type == "favourite"
-          @current_user.favourite_songs << @song
-          redirect_to favourite_songs_path
-    
-        elsif type == "unfavourite"
-          @current_user.favourite_song.delete(@song)
-          redirect_to favourite_songs_path
-    
-        else
-          # Type missing, nothing happens
-          redirect_to root_path
+    def add_favourite
+        if @current_user.present? 
+            FavouriteSong.create(:song_id => params[:id], :user_id => @current_user.id)
+            redirect_to "/favourites"
+            @fav == true
         end
+    end
+    
+    def remove_favourite
+        FavouriteSong.destroy(:song_id => params[:id], :user_id => @current_user.id)
+        @fav == false
     end
 
     private

@@ -2,15 +2,17 @@
 
     <ul>
         <li>Title: <%= @song.title %></li>
-        <li>Artist: <%= link_to @song.artist.name, @song.artist %></li>
-        <% if @song.album.present?%>
-            <li>Album: <%= link_to @song.album.title, @song.album %></li>
+        <% if @song.album.present? %>
+            <li>Artist: <%= link_to @song.artist.name, @song.artist%></li>
+        <% end %>
+        <% if @song.album.present? %>
+            <li>Album: <%= link_to @song.album.title, @song.album%></li>
         <% end %>
         <% if @song.length.present?%>
             <li>Length: <%= @song.length.strftime '%H:%M:%S' %></li>
         <% end %>
         <% if @song.video.present?%>
-        <li><%= video_path( @song.video ) %></li>
+        <li><%= @song.video %></li>
         <% end %>
         <li>Genres: 
         <% @song.genres.each do |genre| %>
@@ -23,7 +25,10 @@
     <%= link_to 'Edit song', edit_song_path(@song) %>
     <%= link_to 'Delete song', @song, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
     <% if @current_user.present? %>
-    <%= link_to "Favourite",   favourite_song_path(@song), method: :put %>
-    <%= link_to "Unfavourite", favourite_song_path(@song, type: "unfavourite"), method: :put %>
-<% end %>
+        <% if @fav == true%>
+            <%= link_to "Remove from favourites", "/songs/#{params[:id]}/favourite", method: :delete %>
+        <% else %>
+            <%= link_to "Add to favourites", "/songs/#{params[:id]}/add_favourite", method: :post %>
+        <% end %>
+    <% end %>
 </div>

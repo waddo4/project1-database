@@ -26,12 +26,13 @@
         <%= link_to image_tag(album.image, :class =>'thumb'), album %>
     <% end %>
     </div>
-    - - - - - - - - - - - - - - -
+ <hr>
 <div class="controls">
     <%= link_to 'Edit Artist', edit_artist_path(@artist) %>
     <%= link_to 'Delete Artist', @artist, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
-    <% if @current_user.present? %>
-    <%= link_to "Favourite",   favourite_artists_path(@artist, type: "favourite"), method: :put %>
-    <%= link_to "Unfavourite", favourite_artists_path(@artist, type: "unfavourite"), method: :put %>
-<% end %>
+    <% if @fav == true%>
+            <%= link_to "Remove from favourites", "/artists/#{params[:id]}/favourite", method: :delete %>
+        <% else %>
+            <%= link_to "Add to favourites", "/artists/#{params[:id]}/add_favourite", method: :post %>
+        <% end %>
 </div>

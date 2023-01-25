@@ -27,14 +27,14 @@ Album.create :title => 'Waco', :date => '2016-03-18', :length => '44:48', :image
 puts "#{ Album.count } albums"
 
 Song.destroy_all
-Song.create :title => 'Go with the Flow', :artist_id => 57, :album_id => 1, :length => '3:07', :video => 'https://youtu.be/DcHKOC64KnE'
-Song.create :title => 'Exit Music (For a Film)', :artist_id => 58, :album_id => 2, :length => ' 4:24', :video => 'https://youtu.be/Bf01riuiJWA'
-Song.create :title => 'Attachment Style', :artist_id => 59, :album_id => 3, :length => '4;21', :video => 'https://youtu.be/jjQOn8csYg0'
-Song.create :title => 'Higher Ground', :artist_id => 60, :album_id => 4, :length => '3:22', :video => 'https://youtu.be/qml8OHFc9Js'
-Song.create :title => 'Method Man', :artist_id => 61, :album_id => 5, :length => '5:50', :video => 'https://youtu.be/PEnwXYJcSZc'
-Song.create :title => "Mt Saint Michel + Saint Michael's Mount", :artist_id => 62, :album_id => 6, :length => '8:10', :video => 'https://youtu.be/DGrFH2Aj71U'
-Song.create :title => 'Carol', :artist_id => 63, :album_id => 7, :length => '3:56', :video => 'https://youtu.be/E5q-dPAHif0'
-Song.create :title => 'Like Soda', :artist_id => 64, :album_id => 8, :length => '4:02', :video => 'https://youtu.be/hRWi-SvzviY'
+Song.create :title => 'Go with the Flow', :length => '3:07', :video => 'https://youtu.be/DcHKOC64KnE'
+Song.create :title => 'Exit Music (For a Film)', :length => ' 4:24', :video => 'https://youtu.be/Bf01riuiJWA'
+Song.create :title => 'Attachment Style', :length => '4;21', :video => 'https://youtu.be/jjQOn8csYg0'
+Song.create :title => 'Higher Ground', :length => '3:22', :video => 'https://youtu.be/qml8OHFc9Js'
+Song.create :title => 'Method Man', :length => '5:50', :video => 'https://youtu.be/PEnwXYJcSZc'
+Song.create :title => "Mt Saint Michel + Saint Michael's Mount", :length => '8:10', :video => 'https://youtu.be/DGrFH2Aj71U'
+Song.create :title => 'Carol', :length => '3:56', :video => 'https://youtu.be/E5q-dPAHif0'
+Song.create :title => 'Like Soda', :length => '4:02', :video => 'https://youtu.be/hRWi-SvzviY'
 
 puts "#{ Song.count } songs"
 

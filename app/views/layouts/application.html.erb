@@ -44,11 +44,8 @@
       |
       <% if @current_user.present? %>
       <div class="dropdown">
-            <button class="dropbtn"><%= link_to 'All Favourites', favourites_path, class: 'nav' %></button>
+            <button class="dropbtn"><%= link_to 'Your Favourites', favourites_path, class: 'nav' %></button>
               <div class="dropdown-content">
-                <%= link_to 'Favourite Albums', favourite_albums_path %>
-                <%= link_to 'Favourite Artists', favourite_artists_path %>
-                <%= link_to 'Favourite Songs', favourite_songs_path %>
             </div>
         </div>
         |

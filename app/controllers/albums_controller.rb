@@ -1,6 +1,10 @@
 class AlbumsController < ApplicationController
     def index
-        @albums = Album.all
+        if params[:search].present?
+            @albums = Album.where'title ILIKE ?', '%' + params[:search] + '%'
+        else
+            @albums = Album.all
+        end
     end
 
     def new
@@ -30,6 +34,19 @@ class AlbumsController < ApplicationController
         album = Album.find params[:id]
         album.destroy
         redirect_to albums_path
+    end
+
+    def add_favourite
+        if @current_user.present? 
+            FavouriteAlbum.create(:album_id => params[:id], :user_id => @current_user.id)
+            redirect_to "/favourites"
+            @fav == true
+        end
+    end
+    
+    def remove_favourite
+        FavouriteAlbum.destroy(:album_id => params[:id], :user_id => @current_user.id)
+        @fav == false
     end
 
     private
