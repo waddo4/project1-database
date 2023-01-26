@@ -40,13 +40,13 @@ class AlbumsController < ApplicationController
         if @current_user.present? 
             FavouriteAlbum.create(:album_id => params[:id], :user_id => @current_user.id)
             redirect_to "/favourites"
-            @fav == true
+            @fav = true
         end
     end
     
     def remove_favourite
         FavouriteAlbum.destroy(:album_id => params[:id], :user_id => @current_user.id)
-        @fav == false
+        @fav = false
     end
 
     private

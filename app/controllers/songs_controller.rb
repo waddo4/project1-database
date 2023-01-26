@@ -40,13 +40,16 @@ class SongsController < ApplicationController
         if @current_user.present? 
             FavouriteSong.create(:song_id => params[:id], :user_id => @current_user.id)
             redirect_to "/favourites"
-            @fav == true
         end
     end
     
     def remove_favourite
-        FavouriteSong.destroy(:song_id => params[:id], :user_id => @current_user.id)
-        @fav == false
+        if @current_user.present? 
+        favourite_song = FavouriteSong.where(song_id: params[:id], user_id: @current_user.id)
+        # favourite_song = FavouriteSong.find params[:id]
+        favourite_song.destroy
+        redirect_to "/favourites"
+        end
     end
 
     private

@@ -40,13 +40,13 @@ class ArtistsController < ApplicationController
         if @current_user.present? 
             FavouriteArtist.create(:artist_id => params[:id], :user_id => @current_user.id)
             redirect_to "/favourites"
-            @fav == true
+            @fav = true
         end
     end
     
     def remove_favourite
         FavouriteArtist.destroy(:artist_id => params[:id], :user_id => @current_user.id)
-        @fav == false
+        @fav = false
     end
 
     private

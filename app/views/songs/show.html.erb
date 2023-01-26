@@ -25,10 +25,14 @@
     <%= link_to 'Edit song', edit_song_path(@song) %>
     <%= link_to 'Delete song', @song, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
     <% if @current_user.present? %>
-        <% if @fav == true%>
-            <%= link_to "Remove from favourites", "/songs/#{params[:id]}/favourite", method: :delete %>
-        <% else %>
-            <%= link_to "Add to favourites", "/songs/#{params[:id]}/add_favourite", method: :post %>
+        <% @current_user.favourite_songs.each do |fs| %>
+            <% if fs.song_id == "#{params[:id]}".to_i %>
+                <%= link_to "Remove from favourites", "/songs/#{params[:id]}/favourite", method: :delete %>
+                <%# <% @fav = true %>
+                <% end %>
+            <%# <% if @fav != true %> %>
+                <%# <%= link_to "Add to favourites", "/songs/#{params[:id]}/add_favourite", method: :post %> %>
+            <%# <% end %> %>
         <% end %>
     <% end %>
 </div>

@@ -1,7 +1,7 @@
 <h1><%= @genre.name %></h1>
 
 <h2><%= link_to "All genres", genres_path %></h2>
-------------------------------------------------------------------------------------------
+<hr>
 <div class="controls">
     <%= link_to 'Edit genre', edit_genre_path(@genre) %>
     <%= link_to 'Delete genre', @genre, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
