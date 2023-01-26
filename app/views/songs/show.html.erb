@@ -11,13 +11,20 @@
         <% if @song.length.present?%>
             <li>Length: <%= @song.length.strftime '%H:%M:%S' %></li>
         <% end %>
-        <% if @song.video.present?%>
-        <li><%= @song.video %></li>
-        <% end %>
         <li>Genres: 
         <% @song.genres.each do |genre| %>
             | <%= genre.name %> | 
         <% end %>
+        <br>
+        <h2>Music Video</h2>
+            <% unless @video.nil?%>
+                <% if @video.include? 'youtube.com/embed'%>
+                    <iframe width="420" height="315"src="<%= @video %>"></iframe>
+                <% else%>
+                    <p><%= @video %></p>
+                <% end%>
+            <% end%>
+
         </li>
     </ul>
     
@@ -25,14 +32,10 @@
     <%= link_to 'Edit song', edit_song_path(@song) %>
     <%= link_to 'Delete song', @song, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
     <% if @current_user.present? %>
-        <% @current_user.favourite_songs.each do |fs| %>
-            <% if fs.song_id == "#{params[:id]}".to_i %>
-                <%= link_to "Remove from favourites", "/songs/#{params[:id]}/favourite", method: :delete %>
-                <%# <% @fav = true %>
-                <% end %>
-            <%# <% if @fav != true %> %>
-                <%# <%= link_to "Add to favourites", "/songs/#{params[:id]}/add_favourite", method: :post %> %>
-            <%# <% end %> %>
-        <% end %>
+         <%# <% if @fav == true %>
+            <%= link_to "Remove from favourites", "/songs/#{params[:id]}/favourite", method: :delete %>
+        <%# <% else %>
+            <%= link_to "Add to favourites", "/songs/#{params[:id]}/add_favourite", method: :post %>
+        <%# <% end %>
     <% end %>
 </div>

@@ -28,6 +28,11 @@ class AlbumsController < ApplicationController
 
     def show
         @album = Album.find params[:id]
+        # if @favourite_album.album_id == params[:id] 
+        #     @fav = true
+        # else
+        #     @fav = false
+        # end
     end
 
     def destroy
@@ -40,13 +45,15 @@ class AlbumsController < ApplicationController
         if @current_user.present? 
             FavouriteAlbum.create(:album_id => params[:id], :user_id => @current_user.id)
             redirect_to "/favourites"
-            @fav = true
         end
     end
     
     def remove_favourite
-        FavouriteAlbum.destroy(:album_id => params[:id], :user_id => @current_user.id)
-        @fav = false
+        if @current_user.present? 
+            @favourite_album = FavouriteAlbum.where(album_id: params[:id], user_id: @current_user.id)
+            @current_user.favourite_albums.delete(@favourite_album)
+            redirect_to albums_path
+        end
     end
 
     private

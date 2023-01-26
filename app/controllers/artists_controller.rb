@@ -45,8 +45,11 @@ class ArtistsController < ApplicationController
     end
     
     def remove_favourite
-        FavouriteArtist.destroy(:artist_id => params[:id], :user_id => @current_user.id)
-        @fav = false
+        if @current_user.present? 
+            favourite_artist = FavouriteArtist.where(artist_id: params[:id], user_id: @current_user.id)
+            @current_user.favourite_artists.delete(favourite_artist)
+            redirect_to artists_path
+        end
     end
 
     private

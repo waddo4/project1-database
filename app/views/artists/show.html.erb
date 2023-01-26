@@ -30,9 +30,10 @@
 <div class="controls">
     <%= link_to 'Edit Artist', edit_artist_path(@artist) %>
     <%= link_to 'Delete Artist', @artist, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
-    <% if @fav == true%>
+    <% if @current_user.present? %>
+    <%# <% if @fav == true %>
             <%= link_to "Remove from favourites", "/artists/#{params[:id]}/favourite", method: :delete %>
-        <% else %>
+        <%# <% else %>
             <%= link_to "Add to favourites", "/artists/#{params[:id]}/add_favourite", method: :post %>
         <% end %>
 </div>
