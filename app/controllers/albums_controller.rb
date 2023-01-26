@@ -56,3 +56,5 @@ class AlbumsController < ApplicationController
         params.require(:album).permit(:title, :artist_id, :date, :length, :image, :tracks) 
     end
 end
+
+
