@@ -1,3 +1,4 @@
+<div class="song_form">
 <%= form_for @song do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -7,11 +8,11 @@
     <%= f.select :album_id, Album.pluck(:title, :id), :include_blank => true %>
     <%= f.label :length %>
     <%= f.text_field :length, :placeholder => 'HH:MM:SS'  %>
-    <%= f.label :video %>
-    <%= f.text_field :video %>
-    <br>
-    <%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name) %>
 
+    <div class="checkbox">
+        <%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name) %>
+    </div>
 
     <%= f.submit %>
+</div>
 <% end %>

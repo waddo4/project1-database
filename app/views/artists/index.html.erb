@@ -1,7 +1,10 @@
 <h1>All artists</h1>
-
+<div class="artist_index">
 <% @artists.each do |artist| %>
-    <%= image_tag artist.image, :class => 'thumb' if artist.image.present? %>
-   <p><%= link_to artist.name, artist %></p>
-
+    <div class="artist">
+        <% if artist.image.present? %>
+            <%= link_to image_tag(artist.image, :class => 'thumb'), artist %>
+            <% end %>
+        <h2><%= link_to artist.name, artist %></h2>
+</div>
 <% end %>

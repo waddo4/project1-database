@@ -1,26 +1,18 @@
 <h1><%= @current_user.email %>'s Favourites</h1>
 
-    <h1>Favourite Songs</h1>
-
+    <h2>Favourite Songs</h2>
     <% @favourite_songs.each do |favourite|%>
-    <ul>
-        <li><%= favourite.song.title %></li>
-    </ul>
+        <ul>
+            <li><%= favourite.song.title %></li>
+        </ul>
     <% end %>
 
-    <h1>Favourite Artists</h1>
-
-    <% @favourite_artists.each do |favourite|%>
-    <ul>
-    <%= image_tag favourite.artist.image, :class => 'thumb'  %>
-        <li><%= favourite.artist.name  %></li>
-    </ul>
+    <h2>Favourite Artists</h2>
+        <% @favourite_artists.each do |favourite|%>
+            <%= image_tag favourite.artist.image, :class => 'thumb image'  %>
     <% end %>
 
-    <h1>Favourite Albums</h1>
-
-    <% @favourite_albums.each do |favourite|%>
-    <ul>
-        <%= image_tag favourite.album.image, :class => 'thumb' %>
-    </ul>
+    <h2>Favourite Albums</h2>
+        <% @favourite_albums.each do |favourite|%>
+            <%= image_tag favourite.album.image, :class => 'thumb' %>
     <% end %>

@@ -13,16 +13,35 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    a {
+        color: $colour2;
+        font-size: 16px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 10px;
+        text-decoration: none;
+    }
 }
 
-a {
-    color: $colour2;
-    font-size: 16px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-top: 10px;
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
+.artist_index {
+    padding-left: 100px;
+    padding-right: 100px;
+    .artist {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
 .container {
     background-color: rgb(42, 41, 41);
     border-color: $colour1;
@@ -32,7 +51,7 @@ a {
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    width: 55%;
+    width: 60%;
     margin: 0 auto;
     padding: 10px;
 }
@@ -40,10 +59,10 @@ a {
 h1 {
     font-family: 'Permanent Marker';
     color: $colour2;
-    font-size: 52px;
+    font-size: 72px;
     text-align: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 h2 {
     text-align: center;
@@ -52,6 +71,8 @@ h2 {
 label{
     display: block;
     font-size: 16px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .thumb {
@@ -59,7 +80,11 @@ label{
 }
 
 .feature {
-    max-height: 30em;
+    max-height: 20em;
+}
+
+.big_yoshi {
+    max-height: 15em;
 }
 
 form {
@@ -69,6 +94,13 @@ form {
 nav {
     padding-top: 10px;
     padding-bottom: 10px;
+    a {
+        color: $colour2;
+        font-size: 16px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 10px;
+    }
 }
 
 .controls {
@@ -78,9 +110,21 @@ nav {
 
 footer {
     padding-top: 10px;
+    a {
+        color: $colour2;
+        font-size: 16px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 10px;
+    }
 }
 
+a:hover {
+    text-decoration: underline;
+}
 .gallery {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     flex-direction: row;
     align-items: center;
@@ -108,7 +152,20 @@ hr {
     width: 90%;
     border-style: dotted none none;
     color: $colour1;
-    // border-width: 3px;
+}
+.song_form {
+    display: flex;
+    padding-left: 35%;
+    padding-right: 13%;
+        .checkbox {
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        padding-top: 5px;
+        padding-bottom: 5px;
+}}
+
+.song_albums {
+    margin: 5px;
 }
 
 /* NAVIGATION DROPDOWN MENU */
@@ -131,7 +188,7 @@ hr {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 120px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
@@ -153,4 +210,52 @@ hr {
 
   .dropdown:hover .dropbtn {
     background-color: rgb(124, 73, 22);
+  }
+
+// IMAGE HOVER
+$img_size: 12em;
+
+.image_container {
+    position: relative;
+    width: $img_size;
+    height: $img_size;
+    a {
+        padding: 0;
+    .image {
+        opacity: 1;
+        display: block;
+        height: $img_size;
+        width: $img_size;
+        transition: .5s ease;
+        backface-visibility: hidden;
+      }
+    }
+  }
+ 
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+        .text {
+        background-color: $colour2;
+        font-size: 16px;
+        padding: 8px 16px;
+            a {
+                color: black;
+                text-decoration: none;
+            }
+        }
+    }
+  
+  .image_container:hover .image {
+    opacity: 0.3;
+  }
+  
+  .image_container:hover .middle {
+    opacity: 1;
   }
