@@ -28,11 +28,6 @@ class AlbumsController < ApplicationController
 
     def show
         @album = Album.find params[:id]
-        # if @favourite_album.album_id == params[:id] 
-        #     @fav = true
-        # else
-        #     @fav = false
-        # end
     end
 
     def destroy

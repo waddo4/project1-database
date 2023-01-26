@@ -1,4 +1,4 @@
-require 'HTTParty'
+require 'httparty'
 
 class SongsController < ApplicationController
     def index
@@ -73,14 +73,3 @@ class SongsController < ApplicationController
         params.require(:song).permit(:title, :artist_id, :album_id, :length, :video, :genre_ids => [])
     end
 end
-
-
-# <div class="content">
-#     <% unless @video.nil?%>
-#         <% if @video.include? 'youtube.com/embed'%>
-#             <iframe width="420" height="315"src="<%= @video %>"></iframe>
-#         <% else%>
-#             <p><%= @video %></p>
-#         <% end%>
-#     <% end%>
-# </div>
