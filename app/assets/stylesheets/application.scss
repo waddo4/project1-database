@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Source+Serif+Pro:wght@300&display=swap');
 
+$colour1: rgb(83, 169, 198);
+$colour2: rgb(215, 137, 58);
+
 body {
     background-image: url("/assets/wallpaper1.jpg");
     background-size: cover;
-    background-color: rgb(229, 216, 43);
+    background-color: $colour2;
     font-family: 'Source Serif Pro', serif;
-    color: rgb(83, 169, 198);
+    color: $colour1;
     min-height: 100%;
     display: flex;
     justify-content: center;
@@ -13,7 +16,7 @@ body {
 }
 
 a {
-    color: rgb(215, 137, 58);
+    color: $colour2;
     font-size: 16px;
     padding-left: 10px;
     padding-right: 10px;
@@ -22,7 +25,7 @@ a {
 
 .container {
     background-color: rgb(42, 41, 41);
-    border-color: rgb(83, 169, 198);
+    border-color: $colour1;
     border: 10px;
     display: flex;
     justify-content: center;
@@ -36,7 +39,7 @@ a {
 
 h1 {
     font-family: 'Permanent Marker';
-    color: rgb(215, 137, 58);
+    color: $colour2;
     font-size: 52px;
     text-align: center;
     margin-top: 15px;
@@ -101,12 +104,18 @@ footer {
     height: 90px;
 }
 
+hr {
+    width: 90%;
+    border-style: dotted none none;
+    color: $colour1;
+    // border-width: 3px;
+}
 
 /* NAVIGATION DROPDOWN MENU */
 
 .dropbtn {
     background-color:rgb(42, 41, 41);
-    color: rgb(215, 137, 58);
+    color: $colour2;
     padding: 10px;
     font-size: 16px;
     border: none;

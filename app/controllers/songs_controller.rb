@@ -29,11 +29,14 @@ class SongsController < ApplicationController
     end
 
     def show
+        your_api_key = 'AIzaSyCMn7qGc3GaUwDY-TTMC44hgkmAgxdR0q0'
         @song = Song.find params[:id]
-
-        # your_api_key = 'AIzaSyCMn7qGc3GaUwDY-TTMC44hgkmAgxdR0q0'
-      your_api_key = 'AIzaSyCMn7qGc3GaUwDY-TTMC44hgkmAgxdR0q0'
-      search = "#{@song.title} music video"
+        @artist = Artist.where(:id => @song.artist_id)
+        if @song.artist_id.present?
+            search = "#{@song.title} #{@artist[0].name}"
+        else 
+            search = "#{@song.title} music video"
+        end
       api_video_results = "https://www.googleapis.com/youtube/v3/search?key=#{your_api_key}&q=#{search}&type=video&part=snippet"
       video_results = HTTParty.get api_video_results
       if !video_results.to_s.include?("error")
